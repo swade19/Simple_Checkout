@@ -12,4 +12,8 @@ describe "checkout" do
   it "lets the customer know the price of the item" do
     expect(checkout.price_checker).to eq 1
   end
+
+  it "has an array of items the customer is buying" do
+    expect(checkout.customer_purchases).to be_a(Array)
+  end
 end

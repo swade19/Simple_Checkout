@@ -25,4 +25,9 @@ describe "checkout" do
     checkout.scan_item(@item_price)
     expect(checkout.total_purchase).to eq 2
   end
+
+  it "formats the price into pounds and pence" do 
+  checkout.scan_item(@item_price)
+  expect(checkout.format_to_pound).to eq "your bill is £1.00"
+  end 
 end

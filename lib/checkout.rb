@@ -10,7 +10,7 @@ class Checkout
     return @item_price
   end
 
-  def scan_item(@item_price)
+  def scan_item(item_price)
     @customer_basket << @item_price
   end
 
@@ -18,11 +18,9 @@ class Checkout
     p @customer_basket.sum
   end
 
-  def format
+  def format_to_pound
     amount = @customer_basket.sum
     total = amount.to_f
-    puts "you bill is £#{total}"
-  end 
-  
-
+    return "your bill is £#{total}"
+  end
 end

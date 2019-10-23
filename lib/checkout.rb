@@ -11,10 +11,10 @@ class Checkout
   end
 
   def scan_item(item_price)
-    customer_basket << @item_price
+    @customer_basket << @item_price
   end
 
   def total_purchase
-    @customer_basket.sum
+    p @customer_basket.sum
   end
 end

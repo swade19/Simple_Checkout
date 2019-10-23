@@ -14,10 +14,15 @@ describe "checkout" do
   end
 
   it "has an array of items the customer is buying" do
-    expect(checkout.customer_purchases).to be_a(Array)
+    expect(checkout.customer_basket).to be_a(Array)
   end
-  it "can add items into the customer purchases list" do
-    checkout.buy_item
-    expect(checkout.customer_purchases.length).to eq 1
+  it "allowes customers to scan items into a basket" do
+    checkout.scan_item(@item_price)
+    expect(checkout.customer_basket.length).to eq 1
+  end
+  it "can add up the items in customer_purchases" do
+    checkout.scan_item(@item_price)
+    checkout.scan_item(@item_price)
+    expect(checkout.total_purchase).to eq 2
   end
 end

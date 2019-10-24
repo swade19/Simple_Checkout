@@ -2,7 +2,7 @@ class Checkout
   attr_reader :item_price, :customer_basket
 
   def initialize
-    @item_price = 1
+    @item_price = 1.00
     @customer_basket = []
   end
 
